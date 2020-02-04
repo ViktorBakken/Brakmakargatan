@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerController))]
 public class PlayerBasicMovement : MonoBehaviour
 {
-
+    
     public enum movementType { Right, Left, None };
 
     [SerializeField]
@@ -51,6 +51,8 @@ public class PlayerBasicMovement : MonoBehaviour
 
     void Update()
     {
+
+       Equals(Mathf.Clamp(transform.position.x, -14f, 14f));
 
         float horizontalAxisValue = Input.GetAxisRaw(horizontalAxis);
         float verticalAxisValue = Input.GetAxisRaw(verticalAxis);
